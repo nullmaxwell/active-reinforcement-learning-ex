@@ -1,22 +1,22 @@
 # Active Reinforcement Learning Example
 ## The Problem:
-In chapter 21 of *Artificial Intelligence: A Modern Approch (Third Edition)*, Stuart Russell and Peter Norvig explain the application of Bayesian reinforcement learning with a policy iteration approach to solve a 4 by 3 'wompus world' problem by finding the optimal policy for each state in the grid.
+In chapter 21 of *Artificial Intelligence: A Modern Approach (Third Edition)*, Stuart Russell and Peter Norvig explain the application of Bayesian reinforcement learning with a policy iteration approach to solve a 4 by 3 'wumpus world' problem by finding the optimal policy for each state in the grid.
 
-And I wondered.... could I do that myself? Lets have a go!
+And I wondered.... could I do that myself? Let's have a go!
 
 The working grid defined in chapter 21 looks like the following, where each number represents a valid state and the dark square indicates a pit of some sort.
 
 ![](images/maze_rep.png)
 
-Additionally, states 4 and 7 are defined as terminal states with utilities of -1 and +1 respectively. State 4 indicates the goal state and state 7 represents the wompus.
+Additionally, states 4 and 7 are defined as terminal states with utilities of -1 and +1 respectively. State 4 indicates the goal state and state 7 represents the wumpus.
 
-Several hyper parameters along with each state's initial reward, terminal status, and state action probability (```state_n.txt```) is stored within the ```reinforcement_maze.txt``` file.
+Several hyperparameters along with each state's initial reward, terminal status, and state action probability (```state_n.txt```) is stored within the ```reinforcement_maze.txt``` file. The remaining hyperparameters are either hard coded or set during initialization.
 ***
 ## The Solution:
 ### **I. Exploration/Learning Phase**
 In order for our agent to calculate the optimal policy for the world, it must learn the true probabilities for each action its able to take from each state. 
 It does this by compiling statistics about the world during its exploration phase.
-By default my agent is naturally curious and at each state is exploring 60% of the time, meaning that 60% of the decisions it makes at each state during the exploration phase are a random choice of the available actions. 
+By default, my agent is naturally curious and at each state is exploring 60% of the time, meaning that 60% of the decisions it makes at each state during the exploration phase are a random choice of the available actions. 
 The agent then tracks which actions have been taken and the outcomes of those decisions using the following equations:
 *Note: In the exploration stage the learning agent never has the ability to see the true transition probabilities stored in the state files, it only has access to the previous iteration's statistics.*
 
@@ -57,7 +57,7 @@ And contrasting these results with Figure 21.1 on page 832 we can see our result
 ***
 
 # Usage
-Below are the several ways you can run the experiment.
+Below are several ways you can run the experiment.
 
 ### **I. Run the script conventiionally with:**
 1. ```pip install -r requirements.txt```
