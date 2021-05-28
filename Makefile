@@ -2,6 +2,7 @@ compile:
 	pip install -r requirements.txt
 
 clean:
+	rm src/*.pyc
 	rm -rf src/__pycache__
 
 run:
