@@ -59,7 +59,7 @@ And contrasting these results with Figure 21.1 on page 832 we can see our result
 # Usage
 Below are several ways you can run the experiment.
 
-### **I. Run the script conventiionally with:**
+### **I. Run the script conventionally with:**
 1. ```pip install -r requirements.txt```
 2. ```python3 main.py <NUM_ITERATIONS> <MAX_ERROR>```
 	
