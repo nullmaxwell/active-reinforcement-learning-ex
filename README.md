@@ -6,7 +6,7 @@ And I wondered.... could I do that myself? Lets have a go!
 
 The working grid defined in chapter 21 looks like the following, where each number represents a valid state and the dark square indicates a pit of some sort.
 
-![](docs/Pasted image 20210527173720.png)
+![](images/maze_rep.png)
 
 Additionally, states 4 and 7 are defined as terminal states with utilities of -1 and +1 respectively. State 4 indicates the goal state and state 7 represents the wompus.
 
@@ -20,9 +20,9 @@ By default my agent is naturally curious and at each state is exploring 60% of t
 The agent then tracks which actions have been taken and the outcomes of those decisions using the following equations:
 *Note: In the exploration stage the learning agent never has the ability to see the true transition probabilities stored in the state files, it only has access to the previous iteration's statistics.*
 
-A.![](docs/Pasted image 20210527171744.png)
+A.![](images/util_update.png)
 
-B.![](docs/Pasted image 20210527172017.png)
+B.![](images/exit_cond.png)
 
 ### **II. Final Utility Calculation and Optimal Policy Generation**
 
@@ -52,7 +52,7 @@ State 11 Utility: 0.398 Decision: Left
 
 And contrasting these results with Figure 21.1 on page 832 we can see our results are very comparable!
 
-![](docs/Pasted image 20210527155838.png)
+![](images/fig211.png)
 
 ***
 
