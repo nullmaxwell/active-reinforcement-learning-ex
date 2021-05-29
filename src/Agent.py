@@ -3,7 +3,7 @@ from src.State import *
 from src.Exceptions import *
 from src.Hyperparameters import * 
 
-class Solution:
+class Agent:
 
     @classmethod
     def checkIterationArg(self, arg):

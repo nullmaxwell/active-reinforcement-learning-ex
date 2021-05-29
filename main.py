@@ -1,17 +1,17 @@
 import sys
 from src.State import *
-from src.Solution import *
+from src.Agent import *
 from src.Hyperparameters import *
 
 def main(argv):
     sys.tracebacklimit = 0
-    Solution.initialize()
+    Agent.initialize()
 
-    HYPER.ITERATIONS = Solution.checkIterationArg(argv[0])
-    HYPER.MAX_ERROR = Solution.checkErrorArg(argv[1])
+    HYPER.ITERATIONS = Agent.checkIterationArg(argv[0])
+    HYPER.MAX_ERROR = Agent.checkErrorArg(argv[1])
 
-    Solution.explore()
-    Solution.calcOptimal()
-    Solution.showOptimalPolicy()
+    Agent.explore()
+    Agent.calcOptimal()
+    Agent.showOptimalPolicy()
 if __name__ == '__main__':
     main(sys.argv[1:])

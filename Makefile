@@ -2,8 +2,8 @@ compile:
 	pip install -r requirements.txt
 
 clean:
-	rm src/*.pyc
 	rm -rf src/__pycache__
+	rm src/*.pyc
 
 run:
 	python3 main.py 500 0.2
