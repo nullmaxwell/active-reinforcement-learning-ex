@@ -4,9 +4,9 @@ from src.Exceptions import *
 from src.Hyperparameters import * 
 
 class Agent:
-
-    @classmethod
-    def checkIterationArg(self, arg):
+    """Acting agent through the environment."""
+    @staticmethod
+    def checkIterationArg(arg):
         """Ensures the iteration commandline argument is the correct format."""
         try:
             arg = int(arg)
@@ -18,8 +18,8 @@ class Agent:
         else:
             return(arg)
 
-    @classmethod
-    def checkErrorArg(self, arg):
+    @staticmethod
+    def checkErrorArg(arg):
         """Ensures the max error commandline argument is the correct format."""
         try:
             arg = float(arg)
@@ -31,8 +31,8 @@ class Agent:
         else:
             raise IterationRangeError(arg)
 
-    @classmethod
-    def initialize(self):
+    @staticmethod
+    def initialize():
         """Reads problem data in from data folder and initializes select Hyperparameters."""
         with open('data/reinforcement_maze.txt') as init_file:
             arr = []
@@ -63,8 +63,8 @@ class Agent:
         init_file.close()
         HYPER.STATES = arr
 
-    @classmethod
-    def explore(self):
+    @staticmethod
+    def explore():
         """Builds probability statistics for the state's probability matrix by tracking possible and past decisions."""
         print(" ")
         print("Exploring and Building statistics...")
@@ -93,8 +93,8 @@ class Agent:
             if(HYPER.DELTA < ((HYPER.MAX_ERROR)*(1-HYPER.GAMMA)/(HYPER.GAMMA)) or iteration_counter > HYPER.ITERATIONS):
                 break
 
-    @classmethod
-    def calcOptimal(self):
+    @staticmethod
+    def calcOptimal():
         """Calculates the final state utility and writes the optimal policy for that state."""
         for x in range(0, HYPER.ITERATIONS):
             isu = []
@@ -108,8 +108,8 @@ class Agent:
                 if state.terminal == True:
                     state.opt_pol = state.encodePolicy(46)
 
-    @classmethod
-    def showOptimalPolicy(self):
+    @staticmethod
+    def showOptimalPolicy():
         """Prints the optimal policy for each state in a legible format."""
         print("Optimal Policy: ")
         print(" ")
